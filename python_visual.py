@@ -1,35 +1,43 @@
 # _*_coding=utf-8_*_
-"""
-#产生数据
-x = np.linspace(-np.pi,np.pi,256,endpoint=True)
-y_sin,y_cos = np.sin(x),np.cos(x)
-
-#画背景
-plt.figure(figsize=(8,6),dpi=80)
-plt.title("simple wave graph")
-plt.grid(True)
-
-#X轴
-plt.xlabel("axis X")
-plt.xlim(-4.0,4.0)
-plt.xticks(np.linspace(-4,4,9,endpoint=True))
-
-#Y轴
-plt.ylabel("axis Y")
-plt.ylim(-1.0, 1.0)
-plt.yticks(np.linspace(-1.0,1.0,9,endpoint=True))
-
-#画波形
-plt.plot(x,y_sin,"r--",linewidth=2.0,label="sin example")
-plt.plot(x,y_cos,"b-",linewidth=2.0,label="cos example")
-
-plt.legend(loc="upper left", shadow=True)
-plt.show()
-"""
-
 import matplotlib
 import numpy as np
 import matplotlib.pyplot as plt
+
+def simple_plot():
+    """
+    simple plot
+    """
+
+    #产生数据
+    x = np.linspace(-np.pi,np.pi,256,endpoint=True)
+    y_sin,y_cos = np.sin(x),np.cos(x)
+
+    #画背景
+    plt.figure(figsize=(8,6),dpi=80)
+    plt.title("simple wave graph")
+    plt.grid(True)
+
+    #X轴
+    plt.xlabel("axis X")
+    plt.xlim(-4.0,4.0)
+    plt.xticks(np.linspace(-4,4,9,endpoint=True))
+
+    #Y轴
+    plt.ylabel("axis Y")
+    plt.ylim(-1.0, 1.0)
+    plt.yticks(np.linspace(-1.0,1.0,9,endpoint=True))
+
+    #画波形
+    plt.plot(x,y_sin,"r--",linewidth=2.0,label="sin example")
+    plt.plot(x,y_cos,"b-",linewidth=2.0,label="cos example")
+
+    plt.legend(loc="upper left", shadow=True)
+    plt.show()
+    return
+# simple_plot()
+
+
+
 def simple_advanced_plot():
     """
     simple advanced plot
@@ -86,5 +94,6 @@ def subplot_plot():
     plt.show()
     return
 
-simple_advanced_plot()
+simple_plot()
+#simple_advanced_plot()
 #subplot_plot()
